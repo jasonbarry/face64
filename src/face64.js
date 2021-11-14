@@ -17,8 +17,8 @@ function decode(emoji) {
   return decodeURIComponent(atob(b64))
 }
 
-function translate(either) {
+function auto(either) {
   return either.codePointAt(0) >= MAGIC ? decode(either) : encode(either)
 }
 
-// module.exports = { encode, decode, translate }
+// module.exports = { encode, decode, auto }

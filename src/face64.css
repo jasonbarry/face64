@@ -9,12 +9,37 @@
   background: #face64;
   color: white;
 }
+.github-corner:hover .octo-arm {
+  animation: wave 1s ease infinite;
+}
+@keyframes wave {
+  0%, 100% {
+    transform: rotate(0);
+  }
+  20%, 60% {
+    transform: rotate(-25deg);
+  }
+  40%, 80% {
+    transform: rotate(10deg);
+  }
+}
+@keyframes heartbeat {
+  0%, 100% {
+    transform: scale(1) rotateZ(0);
+  }
+  25%, 75% {
+    transform: scale(1.5) rotateZ(15deg);
+  }
+  50% {
+    transform: scale(1.25) rotateZ(15deg);
+  }
+}
 .hidden {
   display: none;
 }
 * {
   box-sizing: border-box;
-  font-family: 'Balsamiq Sans', -apple-system, sans-serif;
+  font-family: 'Balsamiq Sans', 'Comic Sans MS', sans-serif;
   margin: 0;
   padding: 0;
 }
@@ -29,19 +54,30 @@ main {
   margin: 64px;
 }
 h1 {
-  margin: 64px 32px 0 32px;
+  cursor: pointer;
+  transition: transform 0.1s ease;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+}
+h1:active {
+  transform: scale(0.9);
+}
+h1, h2 {
+  margin: 32px;
   text-align: center;
 }
 div {
   line-height: 0;
   position: relative;
   width: 50%;
+  z-index: 2;
 }
 textarea {
   border: 0;
   font-size: 32px;
   margin: 0;
-  min-height: 320px;
+  min-height: 50vh;
   padding: 16px;
   padding-bottom: 40px;
   resize: none;
@@ -52,7 +88,7 @@ textarea[readonly] {
   outline: none;
 }
 div:first-of-type {
-  z-index: 2;
+  z-index: 3;
 }
 div:first-of-type textarea {
   border-radius: 16px 0 0 16px;
@@ -81,17 +117,33 @@ button:active {
 }
 footer {
   font-size: 16px;
-  margin-bottom: 16px;
-  margin-top: 120px;
   text-align: center;
+  position: fixed;
+  bottom: 32px;
+  width: 100%;
 }
-a {
+footer a {
   text-decoration: none;
   color: #000;
 }
+footer a span {
+  display: inline-block;
+  margin: 0 4px;
+}
+footer a:hover span {
+  animation: heartbeat 1.2s ease infinite;
+}
 @media screen and (max-width: 640px) {
+  h1 {
+    font-size: 32px;
+  }
+  h2 {
+    font-size: 24px;
+    margin: 24px;
+  }
   main {
     flex-direction: column !important;
+    margin: 32px 16px;
   }
   div {
     width: 100%;
@@ -103,20 +155,7 @@ a {
     border-radius: 0 0 16px 16px;
   }
   textarea {
-    min-height: 200px;
-  }
-}
-.github-corner:hover .octo-arm {
-  animation: octocat-wave 560ms ease-in-out;
-}
-@keyframes octocat-wave {
-  0%, 100% {
-    transform:rotate(0);
-  }
-  20%, 60% {
-    transform:rotate(-25deg);
-  }
-  40%, 80%{
-    transform:rotate(10deg);
+    font-size: 24px;
+    min-height: 30vh;
   }
 }
