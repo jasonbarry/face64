@@ -7,7 +7,7 @@ $('h1').addEventListener('click', randomize)
 
 $('#encode').addEventListener('input', function (event) {
   var value = event.target.value
-  $('#decode').value = auto(value)
+  $('#decode').value = window.face64.auto(value)
 
   if (!value) {
     $('#clear').classList.add('hidden')

@@ -1,8 +1,5 @@
 [build]
-  publish = "src/"
+  publish = "site/"
 
 [dev]
-  publish = "src/"
-  [dev.https]
-    certFile = ".certs/j1.local+3.pem"
-    keyFile = ".certs/j1.local+3-key.pem"
+  publish = "site/"

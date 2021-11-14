@@ -1,0 +1,22 @@
+{
+  "name": "face64",
+  "version": "1.0.0",
+  "description": "base64 encoding/decoding, but with emoji",
+  "main": "src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jasonbarry/face64.me.git"
+  },
+  "keywords": [
+    "base64",
+    "encode",
+    "decode",
+    "emoji"
+  ],
+  "author": "Jason Barry",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jasonbarry/face64.me/issues"
+  },
+  "homepage": "https://github.com/jasonbarry/face64.me#readme"
+}
