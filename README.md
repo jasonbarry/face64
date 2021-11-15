@@ -1,25 +1,31 @@
 # face64
 
-```
+Like base64, but with emoji
+
+- Under 700 bytes, no dependencies
+- Works in node.js and the browser
+- Pretty silly in general
+
+## Installation
+
+```js
   yarn add face64
+  // ...
+  import face64 from 'face64'
 ```
 
-```js
-  import { encode, decode, auto } from 'face64'
+or
+
+```html
+  <script src="https://unpkg.com/face64"></script>
 ```
 
-```js
-  const str = 'Hello, world!'
-  encode(str) // "😣😗😦🙃😲😗😈😼😝😻😝😼😝😺😒😃😲😃😚🙃😪😓😕😍"
-```
+## Usage
 
 ```js
-  const str = '😣😗😦🙃😲😗😈😼😝😻😝😼😝😺😒😃😲😃😚🙃😪😓😕😍'
-  decode(str) // "Hello, world!"
-```
+  face64.encode('Jello, world!') // "😣😽😦🙃😲😗😈😼😝😻😝😼😝😺😒😃😲😃😚🙃😪😓😕😍"
+  face64.decode('😣😽😦🙃😲😗😈😼😝😻😝😼😝😺😒😃😲😃😚🙃😪😓😕😍') // "Jello, world!"
 
-```js
-  let str = 'Hello, world!'
-  str = auto(str) // "😣😗😦🙃😲😗😈😼😝😻😝😼😝😺😒😃😲😃😚🙃😪😓😕😍"
-  auto(str) // "Hello, world!"
+  face64.auto('Jello, world!')   // "😣😽😦🙃😲😗😈😼😝😻😝😼😝😺😒😃😲😃😚🙃😪😓😕😍"
+  face64.auto('😣😽😦🙃😲😗😈😼😝😻😝😼😝😺😒😃😲😃😚🙃😪😓😕😍')   // "Jello, world!"
 ```
