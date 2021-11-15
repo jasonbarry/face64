@@ -2,7 +2,7 @@ function $(qs) { return document.querySelector(qs) }
 function random() { return String.fromCodePoint(Math.floor(Math.random() * 64) + 128512) }
 function randomize() { $('h1').innerText = random() + ' face64 ' + random() }
 
-window.addEventListener('load', randomize)
+window.addEventListener('DOMContentLoaded', randomize)
 $('h1').addEventListener('click', randomize)
 
 $('#encode').addEventListener('input', function (event) {
