@@ -8,7 +8,7 @@ $('h1').addEventListener('click', randomize)
 $('#encode').addEventListener('input', function (event) {
   var value = event.target.value
   $('#decode').value = window.face64.auto(value)
-
+  $('#copy').innerText = 'Copy'
   if (!value) {
     $('#clear').classList.add('hidden')
     $('#copy').classList.add('hidden')
@@ -28,5 +28,6 @@ $('#clear').addEventListener('click', function () {
 
 $('#copy').addEventListener('click', function () {
   navigator.clipboard.writeText($('#decode').value)
+  $('#copy').innerText = 'Copied'
   $('#decode').select()
 })
